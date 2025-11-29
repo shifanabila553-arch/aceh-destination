@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisata Aceh - Eksplorasi Serambi Mekah</title>
+    <!-- Memuat Tailwind CSS melalui CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Menggunakan font Inter untuk tampilan modern */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+        /* Style untuk tombol navigasi aktif */
+        .nav-active {
+            border-bottom: 3px solid #10b981; /* emerald-500 */
+            color: #10b981;
+            font-weight: 600;
+        }
+        /* Efek hover sederhana pada kartu */
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <div class="text-2xl font-bold text-gray-800">
+                Aceh <span class="text-emerald-500">Explorer</span>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="py-2 px-3 text-gray-600 transition duration-150 ease-in-out nav-active" onclick="showSection('landing')">Landing Page</a>
+                <a href="#" class="py-2 px-3 text-gray-600 hover:text-emerald-500 transition duration-150 ease-in-out" onclick="showSection('dashboard')">Dashboard Wisata</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Konten Utama -->
+    <main class="flex-grow">
+        <!-- Bagian 1: Landing Page (Default) -->
+        <section id="landing-section" class="py-16 md:py-24 transition-opacity duration-500">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Hero Section -->
+                <div class="text-center mb-16">
+                    <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4">
+                        Eksplorasi Keindahan <span class="text-emerald-600">Serambi Mekah</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                        Temukan warisan budaya, sejarah tak terlupakan, dan panorama alam Aceh yang memukau.
+                    </p>
+                    <a href="#" onclick="showSection('dashboard'); updateNav('dashboard')" class="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                        Lihat Destinasi Terbaik
+                    </a>
+                </div>
+
+                <!-- Fitur Utama -->
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6 bg-white rounded-xl shadow-lg">
+                        <svg class="w-10 h-10 text-emerald-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.49 9.8 5 8.75 5H6.25C5.16 5 4.144 5.49 3 6.253M12 6.253C13.168 5.49 14.2 5 15.25 5h2.5c1.09 0 2.094.49 3 1.253M12 6.253v13m0-13"></path></svg>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Sejarah & Budaya</h3>
+                        <p class="text-gray-500">Kunjungi museum, masjid bersejarah, dan situs Tsunami yang penuh makna.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-xl shadow-lg">
+                        <svg class="w-10 h-10 text-emerald-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 16m-2-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2z"></path></svg>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Pemandangan Alam</h3>
+                        <p class="text-gray-500">Dari pantai Iboih yang indah hingga dataran tinggi Gayo yang sejuk.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-xl shadow-lg">
+                        <svg class="w-10 h-10 text-emerald-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Kuliner Lokal</h3>
+                        <p class="text-gray-500">Nikmati kopi Gayo yang legendaris dan masakan Aceh yang kaya rempah.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian 2: Dashboard Wisata (Hidden by Default) -->
+        <section id="dashboard-section" class="hidden py-16 transition-opacity duration-500">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-gray-900 mb-10 text-center">Dashboard Destinasi Pilihan</h2>
+
+                <!-- Ringkasan Statistik -->
+                <div class="grid md:grid-cols-4 gap-6 mb-12">
+                    <div class="p-6 bg-white rounded-xl shadow-md border-l-4 border-emerald-500">
+                        <p class="text-sm font-medium text-gray-500">Total Destinasi</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-1">4</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-xl shadow-md border-l-4 border-blue-500">
+                        <p class="text-sm font-medium text-gray-500">Kategori</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-1">3</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-xl shadow-md border-l-4 border-yellow-500">
+                        <p class="text-sm font-medium text-gray-500">Kota/Kabupaten</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-1">3</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-xl shadow-md border-l-4 border-red-500">
+                        <p class="text-sm font-medium text-gray-500">Wajib Kunjung</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-1">100%</p>
+                    </div>
+                </div>
+
+                <!-- Daftar Destinasi (Grid Card) -->
+                <div id="destinasi-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Kartu Destinasi 1: Masjid Raya Baiturrahman -->
+                    <div class="card-hover bg-white rounded-xl shadow-xl overflow-hidden transition transform duration-300">
+                        <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/047857/ffffff?text=Masjid+Raya" onerror="this.onerror=null; this.src='https://placehold.co/600x400/047857/ffffff?text=Masjid+Raya';" alt="Masjid Raya Baiturrahman">
+                        <div class="p-5">
+                            <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded-full mb-2">Sejarah & Agama</span>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Masjid Raya Baiturrahman</h3>
+                            <p class="text-gray-600 text-sm mb-4">Ikon kota Banda Aceh. Sebuah mahakarya arsitektur yang menjadi saksi bisu Tsunami 2004.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-500">
+                                <span><i class="fas fa-map-marker-alt"></i> Banda Aceh</span>
+                                <span class="text-yellow-500 font-bold">4.9/5</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Destinasi 2: Danau Laut Tawar -->
+                    <div class="card-hover bg-white rounded-xl shadow-xl overflow-hidden transition transform duration-300">
+                        <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/1e40af/ffffff?text=Danau+Gayo" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e40af/ffffff?text=Danau+Gayo';" alt="Danau Laut Tawar">
+                        <div class="p-5">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full mb-2">Alam & Pegunungan</span>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Danau Laut Tawar</h3>
+                            <p class="text-gray-600 text-sm mb-4">Danau besar di Dataran Tinggi Gayo, dikelilingi kebun kopi dan udara sejuk Takengon.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-500">
+                                <span><i class="fas fa-map-marker-alt"></i> Aceh Tengah</span>
+                                <span class="text-yellow-500 font-bold">4.7/5</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Destinasi 3: Pulau Weh (Sabang) -->
+                    <div class="card-hover bg-white rounded-xl shadow-xl overflow-hidden transition transform duration-300">
+                        <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/065f46/ffffff?text=Pulau+Weh" onerror="this.onerror=null; this.src='https://placehold.co/600x400/065f46/ffffff?text=Pulau+Weh';" alt="Pulau Weh (Sabang)">
+                        <div class="p-5">
+                            <span class="inline-block bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full mb-2">Pantai & Bahari</span>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Pulau Weh (Sabang)</h3>
+                            <p class="text-gray-600 text-sm mb-4">Tempat nol kilometer Indonesia. Surga bawah laut untuk diving dan snorkeling.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-500">
+                                <span><i class="fas fa-map-marker-alt"></i> Kota Sabang</span>
+                                <span class="text-yellow-500 font-bold">5.0/5</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Destinasi 4: Museum Tsunami Aceh -->
+                    <div class="card-hover bg-white rounded-xl shadow-xl overflow-hidden transition transform duration-300">
+                        <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/b91c1c/ffffff?text=Museum+Tsunami" onerror="this.onerror=null; this.src='https://placehold.co/600x400/b91c1c/ffffff?text=Museum+Tsunami';" alt="Museum Tsunami Aceh">
+                        <div class="p-5">
+                            <span class="inline-block bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full mb-2">Sejarah & Memorial</span>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Museum Tsunami Aceh</h3>
+                            <p class="text-gray-600 text-sm mb-4">Pengingat tragedi Tsunami, sekaligus pusat edukasi dan monumen perdamaian.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-500">
+                                <span><i class="fas fa-map-marker-alt"></i> Banda Aceh</span>
+                                <span class="text-yellow-500 font-bold">4.8/5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Peta Sederhana (Contoh Elemen Dashboard Lain) -->
+                <div class="mt-16 bg-white p-6 rounded-xl shadow-xl">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Ringkasan Peta Lokasi</h3>
+                    <div class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 border border-gray-300">
+                        <!-- Placeholder Peta Interaktif -->
+                        
+                    </div>
+                    <p class="mt-3 text-sm text-gray-600">Representasi visual lokasi wisata. Dalam aplikasi nyata, ini bisa berupa peta interaktif (misalnya, menggunakan Leaflet atau Google Maps).</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-10 py-6">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <!-- UPDATED: Mencantumkan nama Shifa Nabila -->
+            <p>&copy; 2024 Aceh Explorer. Dibuat dengan 💚 oleh Shifa Nabila.</p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome untuk Icon (digunakan dalam Dashboard) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+    <script>
+        // Fungsi untuk mengontrol tampilan antara Landing Page dan Dashboard
+        function showSection(sectionId) {
+            const landing = document.getElementById('landing-section');
+            const dashboard = document.getElementById('dashboard-section');
+            
+            if (sectionId === 'landing') {
+                landing.classList.remove('hidden');
+                dashboard.classList.add('hidden');
+            } else if (sectionId === 'dashboard') {
+                landing.classList.add('hidden');
+                dashboard.classList.remove('hidden');
+            }
+            updateNav(sectionId);
+        }
+
+        // Fungsi untuk memperbarui tampilan navigasi yang aktif
+        function updateNav(sectionId) {
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.classList.remove('nav-active');
+            });
+
+            // Menemukan link yang sesuai dengan sectionId dan menambah kelas 'nav-active'
+            const targetLink = Array.from(navLinks).find(link => 
+                link.getAttribute('onclick').includes(`'${sectionId}'`)
+            );
+
+            if (targetLink) {
+                targetLink.classList.add('nav-active');
+            }
+        }
+
+        // Pastikan halaman awal adalah Landing Page
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('landing');
+        });
+    </script>
+
+</body>
+</html>
